@@ -1,0 +1,52 @@
+{
+  "name": "bd-birthday-manager",
+  "version": "1.0.0",
+  "description": "Cross-platform Birthday & Contacts Manager for iOS, Android, and Desktop (Windows/macOS/Linux)",
+  "main": "index.ts",
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "expo": "~58.0.26",
+    "expo-contacts": "~58.0.11",
+    "expo-notifications": "~58.1.9",
+    "expo-status-bar": "~58.0.5",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-native": "0.88.1",
+    "react-native-web": "^0.21.4"
+  },
+  "devDependencies": {
+    "@types/react": "~19.3.0",
+    "electron": "^45.4.1",
+    "electron-builder": "^26.18.0",
+    "typescript": "~6.0.3"
+  },
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "web:export": "expo export --platform web",
+    "desktop": "electron electron/main.js",
+    "desktop:build": "expo export --platform web && electron-builder --win"
+  },
+  "build": {
+    "appId": "com.bd.birthdaymanager",
+    "productName": "BD Birthday Manager",
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "assets/**/*"
+    ],
+    "extraMetadata": {
+      "main": "electron/main.js"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "assets/icon.png"
+    }
+  },
+  "private": true
+}

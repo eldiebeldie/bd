@@ -1,0 +1,51 @@
+{
+  "expo": {
+    "name": "BD - Birthday Manager",
+    "slug": "bd-birthday-manager",
+    "version": "1.0.0",
+    "orientation": "default",
+    "icon": "./assets/icon.png",
+    "scheme": "bd",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.bd.birthdaymanager",
+      "infoPlist": {
+        "NSContactsUsageDescription": "BD accesses your contacts to import and sync their birthdays so you never miss an upcoming celebration."
+      }
+    },
+    "android": {
+      "package": "com.bd.birthdaymanager",
+      "permissions": [
+        "android.permission.READ_CONTACTS",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.SCHEDULE_EXACT_ALARM"
+      ],
+      "adaptiveIcon": {
+        "backgroundColor": "#6366F1",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      [
+        "expo-contacts",
+        {
+          "contactsPermission": "Allow BD to access your contacts to sync birthdays."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#6366F1"
+        }
+      ]
+    ]
+  }
+}
